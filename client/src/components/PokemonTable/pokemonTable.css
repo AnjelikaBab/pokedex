@@ -45,6 +45,18 @@ th {
     text-align: left; /* Align text to the left */
 }
 
+.poke-name {
+    color: #003366; /* Dark blue color */
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: none !important;; 
+}
+
+a {
+    color: #003366 !important; /* Dark blue */
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
 /* Style for table cells */
 td {
     padding: 10px; /* Padding for cells */

@@ -15,6 +15,10 @@ function PokemonTable() {
   const pokemonsPerPage = 25;
   const [selectedType, setSelectedType] = useState('All');
 
+  const [sortedField, setSortedField] = React.useState(null);
+
+ 
+
   // Reset current page when the selected type or search term changes
   useEffect(() => {
     setCurrentPage(1);
@@ -36,6 +40,19 @@ function PokemonTable() {
   const currentPokemons = filteredPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
   const pageNumbers = Math.ceil(totalPokemons / pokemonsPerPage);
 
+  let sortedProducts = [...filteredPokemons];
+  if (sortedField !== null) {
+    sortedProducts.sort((a, b) => {
+      if (a[sortedField] < b[sortedField]) {
+        return -1;
+      }
+      if (a[sortedField] > b[sortedField]) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
   return (
     <div>
       <h1>Pokédex</h1>
@@ -46,23 +63,31 @@ function PokemonTable() {
       <table className="sortable">
         <thead>
           <tr>
-            <th>Name</th>
+          <th>#</th>
+            <th> 
+                Name
+            </th>
             <th>HP</th>
-            <th>Type</th>
+            <th>Attack</th>
             <th>Special Attack</th>
+            <th>Defense</th>
             <th>Special Defense</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           {currentPokemons.map((pokemon) => (
             <tr key={pokemon.id}>
-              <td>
+              <td>{pokemon.id}</td>
+              <td className ="poke-name">
                 <Link to={`/${pokemon.id}`}>{pokemon.name.english}</Link>
               </td>
               <td>{pokemon.base.HP}</td>
-              <td>{pokemon.type.join(', ')}</td>
+              <td>{pokemon.base.Attack}</td>
               <td>{pokemon.base.SpAttack}</td>
+              <td>{pokemon.base.Defense}</td>
               <td>{pokemon.base.SpDefense}</td>
+              <td>{pokemon.type.join(', ')}</td>
             </tr>
           ))}
         </tbody>
