@@ -1,0 +1,37 @@
+/* Style the select dropdown */
+select {
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px solid #ccc; /* Gray border */
+    margin: 10px; /* Margin for spacing */
+    padding: 10px; /* Padding for better click area */
+    border-radius: 5px; /* Rounded corners */
+    color: #333; /* Text color */
+    font-size: 14px; /* Font size */
+    flex: 1; /* Allow the select to take equal space */
+    max-width: 150px; /* Optional: Set a max width for better control */
+}
+
+/* Style the options */
+option {
+    padding: 8px; /* Padding for options */
+    background-color: #fff; /* White background for options */
+    color: #333; /* Text color for options */
+}
+
+/* Add some hover effect to the dropdown */
+select:hover {
+    background-color: rgb(188, 185, 180); /* Hover background color */
+    border-color: #b9c1ca; /* Border color on hover */
+}
+
+/* Add a focus effect */
+select:focus {
+    outline: none; /* Remove outline */
+    border-color: #fcfcfc; /* Change border color on focus */
+}
+
+/* Style for individual option elements */
+option:hover {
+    background-color: #007bff; /* Hover background color for options */
+    color: white; /* Text color on hover for options */
+}
