@@ -7,7 +7,7 @@ Clone repo
 
 Starting Server:
 Cd into server folder and run:
-<br /> npm run start
+<br /> npm run start OR npm run dev
 
 Running Local Host:
 Cd into client folder and run: <br /> 
