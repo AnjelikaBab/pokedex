@@ -4,7 +4,7 @@
   "description": "pokemon wiki using Node.js, GraphQL, ReactJS",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node server/server.js",
     "dev": "nodemon server/server.js"
   },
   "keywords": [],
