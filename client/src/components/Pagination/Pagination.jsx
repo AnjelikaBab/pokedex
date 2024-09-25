@@ -3,13 +3,10 @@ import './pagination.css';
 
 function Pagination({ pageNumbers, currentPage, setCurrentPage }) {
 
-  // Create an array of page numbers
-  const numbers = Array.from({ length: pageNumbers }, (_, i) => i + 1);
-
   // Determine the range of page numbers to display
   const getDisplayedPages = () => {
     const displayed = [];
-    const totalVisiblePages = 5; // You can adjust this number
+    const totalVisiblePages = 5;
 
     // Start and end of the range
     let start = Math.max(1, currentPage - Math.floor(totalVisiblePages / 2));
@@ -26,7 +23,7 @@ function Pagination({ pageNumbers, currentPage, setCurrentPage }) {
     // Add first page
     if (start > 1) {
       displayed.push(1);
-      if (start > 2) displayed.push('...'); // Add ellipsis
+      if (start > 2) displayed.push('...'); 
     }
 
     // Add the pages within range

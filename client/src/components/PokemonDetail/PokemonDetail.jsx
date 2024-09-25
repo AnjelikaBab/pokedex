@@ -2,12 +2,12 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { GET_POKEMON } from '../../graphql/queries';
-import './pokemonDetail.css'; // Still keeping general styles like layout and margins
+import './pokemonDetail.css'; 
 
 function PokemonDetail() {
-  const { id } = useParams(); // Get the ID from the URL params
+  const { id } = useParams(); 
   const { loading, error, data } = useQuery(GET_POKEMON, {
-    variables: { id: parseInt(id) }, // Ensure ID is passed as an integer
+    variables: { id: parseInt(id) }, 
   });
 
   if (loading) return <p>Loading...</p>;
@@ -17,7 +17,7 @@ function PokemonDetail() {
 
   if (!pokemon) return <p>No Pokémon found.</p>;
 
-  // Max stat value for calculating percentage (for demonstration purposes)
+  // Max pokemon stat for calculating percentage of progress bar
   const maxStatValue = 255;
 
   const getStatPercentage = (stat) => (stat / maxStatValue) * 100;

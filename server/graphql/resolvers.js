@@ -1,4 +1,4 @@
-const pokedex = require('../data/pokedex.json');  // Load the Pokémon data
+const pokedex = require('../data/pokedex.json'); 
 
 //Resolvers tell Apollo Server how to fetch the data associated with a particular type.
 

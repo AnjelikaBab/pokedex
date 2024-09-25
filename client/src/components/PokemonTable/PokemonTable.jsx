@@ -15,9 +15,9 @@ function PokemonTable() {
   const pokemonsPerPage = 25;
   const [selectedType, setSelectedType] = useState('All');
 
-  const [sortedField, setSortedField] = React.useState(null);
+  const [sortedField, setSortedField] = useState(null);
 
- 
+
 
   // Reset current page when the selected type or search term changes
   useEffect(() => {
@@ -40,46 +40,49 @@ function PokemonTable() {
   const currentPokemons = filteredPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
   const pageNumbers = Math.ceil(totalPokemons / pokemonsPerPage);
 
-  let sortedProducts = [...filteredPokemons];
+  let sortedProducts = [...currentPokemons];
   if (sortedField !== null) {
     sortedProducts.sort((a, b) => {
-      if (a[sortedField] < b[sortedField]) {
+      if (a["base"][sortedField] < b["base"][sortedField]) {
         return -1;
       }
-      if (a[sortedField] > b[sortedField]) {
+      if (a["base"][sortedField] > b["base"][sortedField]) {
         return 1;
       }
+
       return 0;
     });
   }
+
+
 
   return (
     <div>
       <h1>Pokédex</h1>
       <div className="input-container">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Filter selectedType={selectedType} setSelectedType={setSelectedType} />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Filter selectedType={selectedType} setSelectedType={setSelectedType} />
       </div>
       <table className="sortable">
         <thead>
           <tr>
-          <th>#</th>
-            <th> 
-                Name
+            <th>#</th>
+            <th> <a className = "header-sort" href="#" onClick={() => { setSortedField("name") }}> Name </a>
+              
             </th>
-            <th>HP</th>
-            <th>Attack</th>
-            <th>Special Attack</th>
-            <th>Defense</th>
-            <th>Special Defense</th>
+            <th><a className = "header-sort" href="#" onClick={() => { setSortedField("HP") }}>HP</a></th>
+            <th><a className = "header-sort" href="#" onClick={() => { setSortedField("Attack") }}>Attack</a></th>
+            <th><a className = "header-sort" href="#" onClick={() => { setSortedField("SpAttack") }}>Special Attack</a></th>
+            <th><a className = "header-sort" href="#" onClick={() => { setSortedField("Defense") }}>Defense</a></th>
+            <th><a className = "header-sort" href="#" onClick={() => { setSortedField("SpDefense") }}>Special Defense</a></th>
             <th>Type</th>
           </tr>
         </thead>
         <tbody>
-          {currentPokemons.map((pokemon) => (
+          {sortedProducts.map((pokemon) => (
             <tr key={pokemon.id}>
               <td>{pokemon.id}</td>
-              <td className ="poke-name">
+              <td className="poke-name">
                 <Link to={`/${pokemon.id}`}>{pokemon.name.english}</Link>
               </td>
               <td>{pokemon.base.HP}</td>
@@ -92,10 +95,10 @@ function PokemonTable() {
           ))}
         </tbody>
       </table>
-      <Pagination 
+      <Pagination
         pageNumbers={pageNumbers}
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage} 
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

@@ -1,115 +1,114 @@
-/* Container for the entire Pokémon table component */
 .pokemon-table-container {
-    max-width: 800px; /* Set a maximum width for the table */
-    margin: 20px auto; /* Center the container */
-    padding: 20px; /* Add some padding */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-container {
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    margin-top: 20px; /* Optional margin for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-/* Styles for the app title */
 h1 {
-    text-align: center; /* Center the title */
-    color: #4A90E2; /* A calming blue color for the title */
-    font-size: 3em; /* Larger font size for prominence */
-    margin: 20px 0; /* Margin above and below the title */
-    padding: 10px; /* Padding around the title */
-    background-color: #f0f8ff; /* Light, soft background color */
-    border-radius: 8px; /* Rounded corners for a modern touch */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean and modern font */
-    text-transform: capitalize; /* Capitalize the first letter of each word */
-    letter-spacing: 1px; /* Slight spacing between letters */
+    text-align: center;
+    color: #4A90E2;
+    font-size: 3em;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
-/* Style for the table */
 table {
-    width: 100%; /* Full width */
-    border-collapse: collapse; /* Collapse borders */
-    margin-top: 20px; /* Space above the table */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-/* Style for table headers */
 th {
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white; /* White text color */
-    padding: 10px; /* Padding for headers */
-    text-align: left; /* Align text to the left */
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
 }
 
 .poke-name {
-    color: #003366; /* Dark blue color */
-    font-weight: bold; /* Makes the text bold */
-    text-decoration: none !important;; 
+    color: #003366;
+    font-weight: bold;
+    text-decoration: none !important;
 }
 
 a {
-    color: #003366 !important; /* Dark blue */
+    color: #003366 !important;
     font-weight: bold !important;
     text-decoration: none !important;
 }
 
-/* Style for table cells */
+a:hover {
+    color: #003366 !important;
+    font-weight: bold;
+}
+
+.header-sort {
+    background-color: #007bff !important;
+    color: white !important;
+    text-align: left !important;
+}
+
 td {
-    padding: 10px; /* Padding for cells */
-    border-bottom: 1px solid #ddd; /* Light gray border below cells */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Hover effect for table rows */
 tr:hover {
-    background-color: #f1f1f1; /* Light gray background on hover */
+    background-color: #f1f1f1;
 }
 
-/* Styles for the search bar and filter */
 .search-bar, .filter {
-    margin-bottom: 20px; /* Space below */
-    display: flex; /* Flexbox for alignment */
-    justify-content: space-between; /* Space between elements */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Style for pagination */
 .pagination {
-    display: flex; /* Flexbox for pagination */
-    justify-content: center; /* Center the pagination */
-    margin-top: 20px; /* Space above pagination */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-/* Style for pagination buttons */
 .page-link {
-    padding: 8px 12px; /* Padding for buttons */
-    margin: 0 5px; /* Space between buttons */
-    border: 1px solid #007bff; /* Border color */
-    color: #007bff; /* Button text color */
-    background-color: white; /* Button background color */
-    border-radius: 4px; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Hover effect for pagination buttons */
 .page-link:hover {
-    background-color: #007bff; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    background-color: #007bff;
+    color: white;
 }
 
-/* Active state for pagination */
 .active .page-link {
-    background-color: #007bff; /* Active button background color */
-    color: white; /* Active button text color */
-    border: 1px solid #0056b3; /* Darker border for active button */
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
 }
 
-/* Style for disabled buttons */
 .page-link:disabled {
-    background-color: #e9ecef; /* Light gray for disabled */
-    color: #6c757d; /* Dark gray for disabled */
-    cursor: not-allowed; /* Not allowed cursor */
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
 }

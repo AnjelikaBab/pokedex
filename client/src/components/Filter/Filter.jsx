@@ -1,7 +1,7 @@
 import React from 'react';
-import './filter.css';  // Import the CSS file
+import './filter.css';  
 
-const types = ['All', 'Grass', 'Poison', 'Fire', 'Water', 'Electric', 'Psychic']; // Add more types as needed
+const types = ['All', 'Grass', 'Poison', 'Fire', 'Water', 'Electric', 'Psychic']; 
 
 function Filter({ selectedType, setSelectedType }) {
   return (
