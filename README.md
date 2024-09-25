@@ -6,10 +6,13 @@ In order to run this application:
 Clone repo
 
 Starting Server:
-Cd into server folder and run: npm run start
+Cd into server folder and run:
+<br /> npm run start
 
 Running Local Host:
-Cd into client folder and run: npm start
+Cd into client folder and run: <br /> 
+npm install <br /> 
+npm start
 
 - [x] List of pokemon and their stats
 <img width="1438" alt="pokedex1" src="https://github.com/user-attachments/assets/6d4302f2-e32a-4112-9ce8-7426af3343b7">
